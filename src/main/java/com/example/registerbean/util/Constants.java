@@ -1,4 +1,4 @@
-package com.example.registerbean;
+package com.example.registerbean.util;
 
 public class Constants {
 

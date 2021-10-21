@@ -1,5 +1,7 @@
-package com.example.registerbean;
+package com.example.registerbean.config;
 
+import com.example.registerbean.dao.PersonDao;
+import com.example.registerbean.service.impl.PersonManagerImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
@@ -10,8 +12,8 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.stereotype.Component;
 
-import static com.example.registerbean.Constants.PERSON_MANAGER_BEAN_DEF;
-import static com.example.registerbean.Constants.PERSON_MANAGER_SINGLETON;
+import static com.example.registerbean.util.Constants.PERSON_MANAGER_BEAN_DEF;
+import static com.example.registerbean.util.Constants.PERSON_MANAGER_SINGLETON;
 
 
 @Component

@@ -1,4 +1,4 @@
-package com.example.registerbean;
+package com.example.registerbean.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class PersonManagerAspect {
 
-    @Before("within(com.example.registerbean.PersonManagerImpl)")
+    @Before("within(com.example.registerbean.service.impl.PersonManagerImpl)")
     public void log() {
         log.info("AOP invoke PersonManagerImpl");
     }
 
-    @Before("within(com.example.registerbean.PersonManagerProxy)")
+    @Before("within(com.example.registerbean.proxy.PersonManagerProxy)")
     public void logProxy() {
         log.info("AOP invoke PersonManagerProxy");
     }

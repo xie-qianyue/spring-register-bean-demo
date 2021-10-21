@@ -1,6 +1,7 @@
-package com.example.registerbean;
+package com.example.registerbean.dao;
 
 
+import com.example.registerbean.entity.Person;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;

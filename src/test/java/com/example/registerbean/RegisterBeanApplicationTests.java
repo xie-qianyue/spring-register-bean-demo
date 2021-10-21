@@ -1,5 +1,6 @@
 package com.example.registerbean;
 
+import com.example.registerbean.service.PersonManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static com.example.registerbean.Constants.PERSON_MANAGER_BEAN_DEF;
-import static com.example.registerbean.Constants.PERSON_MANAGER_SINGLETON;
+import static com.example.registerbean.util.Constants.PERSON_MANAGER_BEAN_DEF;
+import static com.example.registerbean.util.Constants.PERSON_MANAGER_SINGLETON;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)

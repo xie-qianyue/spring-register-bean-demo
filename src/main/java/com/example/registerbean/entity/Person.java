@@ -1,4 +1,4 @@
-package com.example.registerbean;
+package com.example.registerbean.entity;
 
 import lombok.Data;
 
