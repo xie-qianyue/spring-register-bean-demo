@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class PersonBeanPostFactory implements BeanPostProcessor {
+public class PersonBeanPostProcessor implements BeanPostProcessor {
 
     @Autowired
     ApplicationContext applicationContext;
@@ -21,13 +21,13 @@ public class PersonBeanPostFactory implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("autoInjectPersonManager")){
+        if (beanName.equals("autoInjectPersonManager")) {
             log.info("Create proxy in postProcessAfterInitialization >>>>>>>>>>>>>>>>");
 
-            // AOP works
+            // AOP works，因为 personManagerProxy 是通过 @Component 托管给 Spring 容器了
             return applicationContext.getBean("personManagerProxy");
 
-            // AOP doesn't work
+            // AOP doesn't work，因为返回的不是在 spring 容器托管的 bean
             // return new PersonManagerProxy();
         }
         return bean;

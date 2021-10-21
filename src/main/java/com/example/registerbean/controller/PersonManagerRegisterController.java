@@ -54,10 +54,13 @@ public class PersonManagerRegisterController {
                 personManager = applicationContext.getBean(PERSON_MANAGER_SINGLETON, PersonManager.class);
                 break;
             case "proxy":
+                // 跟注入 bean 的方式无关 (@Autowired 或 下面 getBean)，只要是在 BPP 返回的是托管的 bean，就会被切面机制处理
+                // 返回的就是个代理
                 personManager = this.personManager;
+                // personManager = applicationContext.getBean("autoInjectPersonManager", PersonManager.class);
                 break;
             case "api":
-                // 只有通过 registerSingleton 注册的 bean 不是 proxy，所以切面也会失效
+                // 通过 api 注册的 bean 不会被 Spring 的切面机制处理，所以创建的也不会是代理
                 personManager = applicationContext.getBean(PERSON_MANAGER_API, PersonManagerImpl.class);
                 break;
             default:
