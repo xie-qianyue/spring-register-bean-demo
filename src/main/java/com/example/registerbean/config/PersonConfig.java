@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class PersonConfig {
 
     @Bean
-    public Person Person(){
+    public Person Person() {
         log.info("Initialize person >>>>>>>>>>>>>>>>");
         return new Person("Jackson", 39);
     }
